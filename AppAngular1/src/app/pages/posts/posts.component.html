@@ -1,7 +1,9 @@
 <p>posts works!</p>
 <ul class="list-group">
-    <li class="list-group-item">
-        <h2>tituloooo</h2>
-        <p>holii</p>
+    <li *ngFor="let mensaje of mensajes" class="list-group-item">
+        <h2>{{mensaje.title}}</h2>
+        <p>
+            {{mensaje.body}}
+        </p>
     </li>
 </ul>
