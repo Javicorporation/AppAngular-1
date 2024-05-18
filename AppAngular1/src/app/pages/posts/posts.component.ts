@@ -8,12 +8,17 @@ import { DataService } from '../../services/data.service';
 })
 export class PostsComponent implements OnInit {
 
-  posts: any;
-  mensajes: any[] = [];
+  //posts: any;
+  //mensajes: any[] = [];
 
+  mensajes: any;
+  constructor(private dataService: DataService){ }
 
-  constructor(private dataService: DataService){}
+  ngOnInit(){
+      this.mensajes = this.dataService.getPosts();
+  }
 
+  /* 
   ngOnInit(): void {
 
       this.dataService.getPosts()
@@ -25,5 +30,5 @@ export class PostsComponent implements OnInit {
             console.log(this.posts);
           }
         });
-  }
+  }*/
 }
